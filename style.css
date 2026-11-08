@@ -1,0 +1,37 @@
+:root{
+  --ink:#10213a;
+  --ground:#e9eef3;
+  --paper:#ffffff;
+  --gold:#f2a900;
+  --muted:#5b6b80;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Instrument Sans",system-ui,sans-serif;background:var(--ground);color:var(--ink);line-height:1.5}
+
+.top{background:var(--ink);color:#fff;padding:56px 20px 40px;text-align:left;max-width:100%}
+.top>*{max-width:720px;margin-left:auto;margin-right:auto}
+.year{font-weight:600;color:var(--gold);font-size:1rem;margin-bottom:6px}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(2.6rem,11vw,5.5rem);line-height:.95;letter-spacing:-.02em}
+.sub{color:#b9c6d8;margin:14px auto 26px}
+.btn{display:inline-block;background:var(--gold);color:var(--ink);font-weight:600;padding:14px 24px;border-radius:999px;cursor:pointer;margin-left:max(20px,calc((100% - 720px)/2));max-width:none}
+.btn:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.note{color:#b9c6d8;font-size:.9rem;margin-top:14px}
+.status{color:var(--gold);font-weight:600;margin-top:10px;min-height:1.4em}
+
+main{padding:28px 14px 60px;max-width:1200px;margin:auto}
+.grid{columns:2 150px;column-gap:12px}
+@media(min-width:700px){.grid{columns:3 200px;column-gap:16px}}
+.grid button{display:block;width:100%;border:0;background:var(--paper);padding:6px;margin:0 0 12px;cursor:pointer;break-inside:avoid;box-shadow:0 1px 3px rgba(16,33,58,.18);transition:transform .15s}
+.grid button:hover{transform:translateY(-3px)}
+.grid img{display:block;width:100%;height:auto;background:#d5dde6}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+
+.lightbox{position:fixed;inset:0;background:rgba(10,18,32,.94);display:flex;align-items:center;justify-content:center;z-index:10}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain}
+.lightbox button{position:absolute;background:none;border:0;color:#fff;font-size:2.6rem;cursor:pointer;padding:12px 16px}
+.close{top:6px;right:6px}
+.prev{left:0;top:50%}
+.next{right:0;top:50%}
+
+@media (prefers-reduced-motion:reduce){.grid button{transition:none}}
